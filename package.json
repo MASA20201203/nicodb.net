@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mysql": "^2.18.1",
+    "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "eslint": "latest",
