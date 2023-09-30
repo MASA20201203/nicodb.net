@@ -3,7 +3,9 @@ import styles from "./page.module.css";
 
 export async function getData() {
   console.log("--- getData ---");
-  const res = await fetch("http://localhost:3000/api/getTest");
+  const res = await fetch("http://localhost:3000/api/getTest", {
+    cache: "force-cache",
+  });
   // const data = await res.json();
 
   console.log(res);
