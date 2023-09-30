@@ -89,4 +89,8 @@ npx create-next-app@latest nicodb --use-npm
 ## 参考 URL
 
 - PlanetScale というサーバレス DB が凄く勢いのあるサービスらしいので Quick Start やってみた
+
   - https://qiita.com/tak001/items/cfbaa9dcb542929ff235
+
+- Next.js マニュアル
+  - https://nextjs.org/docs
