@@ -1,9 +1,40 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
 
-export default function Home() {
+export async function getData() {
+  console.log("--- getData ---");
+  const res = await fetch("http://localhost:3000/api/getTest");
+  // const data = await res.json();
+
+  console.log(res);
+  // console.log(res.json());
+
+  // return {
+  //   props: { data },
+  // };
+  return res.json();
+  // return res;
+}
+
+export default async function Home() {
+  console.log("--- Home ---");
+  const data = await getData();
+
+  console.log("test2");
+  console.log(data);
+
   return (
     <main className={styles.main}>
+      <div>
+        <h1>User List</h1>
+      </div>
+      <ul>
+        {data[0].map((user, index) => (
+          <li key={index}>
+            User ID: {user.user_id}, User Name: {user.user_name}
+          </li>
+        ))}
+      </ul>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -15,7 +46,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -91,5 +122,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
